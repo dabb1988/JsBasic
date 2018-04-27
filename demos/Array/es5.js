@@ -83,3 +83,55 @@ console.log(numbers.lastIndexOf(2, 3)) // 3
 console.log(numbers.lastIndexOf(2, 2)) // 0
 console.log(numbers.lastIndexOf(2, -2))// 
 console.log(numbers.lastIndexOf(2, -1))//
+//#迭代方法
+// every
+console.log("----every")
+var everyArry = [2, 5, 8, 3, 4]
+var everyRes = everyArry.every(function(element, index, array){
+	return element < 10;
+})
+console.log(everyRes)
+// some
+console.log("----some")
+var someArry = [2, 5, 8, 1, 4]
+var someRes = someArry.some(function(element, index, array){
+	return element > 10;
+})
+console.log(someRes)
+// filter
+console.log("----filter")
+var filterArry = ["spray", "limit", "elite", "exuberant", "destruction", "present", "happy"];
+var filterRes = filterArry.filter(function(word){
+    return word.length > 6;
+});
+console.log(filterRes)
+// map
+console.log("----map")
+var mapArry = [1, 5, 10, 15];
+var mapRes = mapArry.map(function(x) {
+    return x * 2;
+});
+console.log(mapRes)
+// forEach
+console.log("----forEach")
+const forEachArry = ['item1', 'item2', 'item3'];
+const copyArry = [];
+forEachArry.forEach(function(item){
+  copyArry.push(item)
+});
+console.log(copyArry)
+//#缩小方法
+// reduce
+console.log("----reduce")
+var reduceArry = [0, 1, 2, 3];
+var reduceRes = reduceArry.reduce(function(accumulator, currentValue) {
+	console.log(accumulator)
+    return accumulator + currentValue;
+});
+console.log(reduceRes);
+// reduceRight
+console.log("----reduceRight")
+var reduceRightRes = [[0, 1], [2, 3], [4, 5]].reduceRight(function(a, b) {
+return a.concat(b);
+}, []);
+console.log(reduceRightRes)
