@@ -1,0 +1,12 @@
+location ~ /smt-stg/ {
+	rewrite ^.+smt-stg/?(.*)$ /$1 break;
+	include uwsgi_params;
+	proxy_pass https://smt-web-stg.pingan.com.cn:48443;
+	proxy_pass_header Set-Cookie;
+	proxy_set_header Host $host;
+	proxy_set_header X-Real-IP $remote_addr;
+	proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+	client_max_body_size    10m; 
+	access_log logs/wxapi_access.log;
+	error_log logs/wxapi_error.log;
+}
