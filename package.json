@@ -27,7 +27,9 @@
     "babel-register": "^6.26.0"
   },
   "dependencies": {
+    "body-parser": "^1.18.2",
     "express": "^4.16.3",
+    "js-sha1": "^0.6.0",
     "memory-cache": "^0.2.0"
   }
 }
