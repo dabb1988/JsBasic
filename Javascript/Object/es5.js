@@ -31,6 +31,8 @@ console.log(Function instanceof Object) // true
 console.log(Function instanceof Function) // true
 
 // javascript除了全局作用域之外，只有函数可以创建的作用域
+// this到底取何值，是在函数真正被调用执行的时候确定的，函数定义的时候确定不了
+// this的取值是执行上下文环境的一部分，每次调用函数，都会产生一个新的执行上下文环境
 
 // 继承最佳实践
 function Plane(color) {
